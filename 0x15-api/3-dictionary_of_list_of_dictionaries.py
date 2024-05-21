@@ -7,7 +7,7 @@ import sys
 
 
 if __name__ == '__main__':
-    url = "https://jsonplaceholder.typicode.com/users"
+    url = "https://jsonplaceholder.typicode.com/todos/users"
 
     resp = requests.get(url)
     Users = resp.json()
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     for user in Users:
         USER_ID = user.get('id')
         USERNAME = user.get('username')
-        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(USER_ID)
+        url = 'https://jsonplaceholder.typicode.com/todos/users/{}'.format(USER_ID)
         url = url + '/todos/'
         resp = requests.get(url)
 

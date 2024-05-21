@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-'''
-gather employee data from API
-'''
+'''gather employee data from API'''
 
 import re
 import requests
 import sys
 
-REST_API = "https://jsonplaceholder.typicode.com"
+REST_API = "https://jsonplaceholder.typicode.com/todos/1"
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
