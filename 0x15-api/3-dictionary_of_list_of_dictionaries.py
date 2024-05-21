@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 """python script to fetch Rest API for todo lists of employees"""
 
@@ -7,7 +8,7 @@ import sys
 
 
 if __name__ == '__main__':
-    url = "https://jsonplaceholder.typicode.com/todos/users"
+    url = "https://jsonplaceholder.typicode.com/users"
 
     resp = requests.get(url)
     Users = resp.json()
@@ -16,7 +17,7 @@ if __name__ == '__main__':
     for user in Users:
         USER_ID = user.get('id')
         USERNAME = user.get('username')
-        url = 'https://jsonplaceholder.typicode.com/todos/users/{}'.format(USER_ID)
+        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(USER_ID)
         url = url + '/todos/'
         resp = requests.get(url)
 
@@ -33,3 +34,4 @@ if __name__ == '__main__':
             """A little Something"""
     with open('todo_all_employees.json', 'w') as f:
         json.dump(users_dict, f)
+
